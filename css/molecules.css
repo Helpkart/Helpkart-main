@@ -145,3 +145,19 @@
         width: 100%;
     }
 }
+
+/* Universal responsive behavior for search container */
+.search-container {
+    gap: 0.5rem;
+}
+
+#search-input {
+    min-width: 0;
+    flex-shrink: 2;
+}
+
+@media (max-width: 380px) {
+    .search-container {
+        gap: 0.25rem;
+    }
+}

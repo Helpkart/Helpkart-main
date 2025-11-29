@@ -61,6 +61,7 @@
     box-shadow: var(--shadow-md);
     color: var(--color-text-primary);
     transition: background-color 0.2s;
+    flex-shrink: 0;
 }
 
 .icon-btn:active {
@@ -70,10 +71,10 @@
 /* --- Inputs --- */
 #search-input {
     flex: 1;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.75rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-full);
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-family: inherit;
     background-color: var(--color-surface);
     box-shadow: var(--shadow-md);
@@ -111,17 +112,4 @@
 .list-surplus .item-name,
 .list-surplus .item-amount {
     color: var(--color-surplus);
-}
-
-/* Mobile Responsive Tweaks */
-@media (max-width: 380px) {
-    .icon-btn {
-        width: 40px;
-        height: 40px;
-    }
-
-    #search-input {
-        font-size: 0.875rem;
-        padding: 0.5rem 0.75rem;
-    }
 }

@@ -170,13 +170,17 @@ export class SettingsController {
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
                             <span>📞</span> <span>+94 77 123 4567</span>
                         </div>
+
                     </div>
                 </div>
                 
                 <div style="text-align: center; margin-top: 2rem; color: #9CA3AF; font-size: 0.75rem;">
-                    v1.0.0 • Made with ❤️ in Sri Lanka
+                    v0.1 • Made with ❤️ in Sri Lanka
                 </div>
-            </div>
+
+                <div style="text-align: center; margin-top: 1rem; color: #9CA3AF; font-size: 0.75rem;">
+                    Kudos to OpenStreetMap for the maps!
+                </div>
         `;
 
         // Add Event Listeners for Map Switching
