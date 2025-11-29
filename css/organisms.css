@@ -65,7 +65,8 @@
 
 .leaflet-popup-content {
     margin: 0 !important;
-    width: 300px !important;
+    max-width: 300px;
+    width: 85vw;
 }
 
 .leaflet-container a.leaflet-popup-close-button {
@@ -157,7 +158,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--color-bg);
-    z-index: var(--z-map);
+    z-index: 2000;
     padding-top: 4rem;
     padding-bottom: 6rem;
     overflow-y: auto;
@@ -172,7 +173,7 @@
 /* --- Filter Popup --- */
 .filter-popup {
     position: absolute;
-    bottom: 5rem;
+    bottom: calc(5rem + env(safe-area-inset-bottom));
     /* Positioned above the bottom bar */
     left: 50%;
     transform: translateX(-50%);
@@ -187,7 +188,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-height: 70vh;
+    max-height: 70dvh;
     overflow-y: auto;
 }
 

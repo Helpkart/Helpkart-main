@@ -149,10 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 7. Specific Keywords (Checks items in needed/surplus)
             if (keywords.length > 0) {
+                // Fix: Default to empty arrays to prevent crash
+                const neededItems = item.needed || [];
+                const surplusItems = item.surplus || [];
+                const locationName = item['Location Name'] || '';
+
                 const allItemText = [
-                    ...item.needed.map(i => i.item.toLowerCase()),
-                    ...item.surplus.map(i => i.item.toLowerCase()),
-                    item['Location Name'].toLowerCase()
+                    ...neededItems.map(i => i.item.toLowerCase()),
+                    ...surplusItems.map(i => i.item.toLowerCase()),
+                    locationName.toLowerCase()
                 ].join(' ');
 
                 // Must match AT LEAST ONE keyword
