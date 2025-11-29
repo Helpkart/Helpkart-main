@@ -63,6 +63,13 @@
                 </svg>
             </button>
 
+            <button id="filter-toggle" class="icon-btn" aria-label="Filter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+            </button>
+
             <input type="text" id="search-input" placeholder="Search locations, items..." aria-label="Search">
             <button id="view-toggle" class="icon-btn" aria-label="Toggle List View">
                 <!-- List Icon -->
@@ -103,6 +110,69 @@
             <div class="settings-container">
                 <h2>Settings</h2>
                 <p>Settings panel content goes here.</p>
+            </div>
+        </div>
+
+        <!-- Filter Popup Card -->
+        <div id="filter-popup" class="filter-popup hidden">
+            <div class="filter-header">
+                <h3>Filter Options</h3>
+                <button id="close-filter" class="icon-btn-small">✕</button>
+            </div>
+
+            <div class="filter-grid">
+                <!-- Date -->
+                <div class="filter-group">
+                    <label>Added After</label>
+                    <input type="date" id="filter-date">
+                </div>
+
+                <!-- District/Location -->
+                <div class="filter-group">
+                    <label>District / Province</label>
+                    <input type="text" id="filter-location" placeholder="e.g. Galle, Colombo">
+                </div>
+
+                <!-- Keywords -->
+                <div class="filter-group full-width">
+                    <label>Keywords (comma separated)</label>
+                    <input type="text" id="filter-keywords" placeholder="e.g. Rice, Water, Tents">
+                </div>
+
+                <!-- Urgency -->
+                <div class="filter-group">
+                    <label>Urgency</label>
+                    <div class="checkbox-row">
+                        <label><input type="checkbox" value="critical" class="filter-urgency"> Critical</label>
+                        <label><input type="checkbox" value="normal" class="filter-urgency"> Normal</label>
+                        <label><input type="checkbox" value="surplus" class="filter-urgency"> Surplus</label>
+                    </div>
+                </div>
+
+                <!-- Type -->
+                <div class="filter-group">
+                    <label>Type</label>
+                    <div class="checkbox-row">
+                        <label><input type="checkbox" value="Relief Center" class="filter-type"> Relief Center</label>
+                        <label><input type="checkbox" value="NGO" class="filter-type"> NGO</label>
+                        <label><input type="checkbox" value="Individual" class="filter-type"> Individual</label>
+                        <label><input type="checkbox" value="Other" class="filter-type"> Other</label>
+                    </div>
+                </div>
+
+                <!-- Inventory -->
+                <div class="filter-group">
+                    <label>Inventory Status</label>
+                    <div class="checkbox-row">
+                        <label><input type="checkbox" id="filter-has-needs"> Has Needs</label>
+                        <label><input type="checkbox" id="filter-has-surplus"> Has Surplus</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-actions">
+                <button id="clear-filters" class="btn-secondary">Clear</button>
+                <button id="apply-filters" class="btn-primary">Apply Filters</button>
             </div>
         </div>
     </main>
