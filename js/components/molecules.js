@@ -16,7 +16,7 @@ export function generatePopupContent(item) {
                 if (value.length === 0) return ''; // Skip empty lists
 
                 const listItems = value.map(i =>
-                    `<li class="flex justify-between">
+                    `<li>
                         <span class="item-name">${i.item}</span>
                         <span class="item-amount">${i.amount}</span>
                      </li>`

@@ -135,8 +135,13 @@
     gap: 0.75rem;
 }
 
-@media (max-width: 380px) {
-    .search-container {
-        gap: 0.25rem;
+/* Fix for narrow phones - make buttons stack vertically */
+@media (max-width: 360px) {
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions .btn {
+        width: 100%;
     }
 }
