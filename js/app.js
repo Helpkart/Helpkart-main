@@ -1,5 +1,5 @@
 import { fetchData, parseTupleData } from './utils.js';
-import { MapController, ListController } from './components/organisms.js';
+import { MapController, ListController, SettingsController } from './components/organisms.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- State ---
@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Controllers ---
     const mapController = new MapController('map');
     const listController = new ListController('list-container');
+    const settingsController = new SettingsController('settings-view', mapController);
 
     // --- DOM Elements ---
     const statusBanner = document.getElementById('status-banner');
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const mapView = document.getElementById('map');
     const listView = document.getElementById('list-view');
     const contributionContainer = document.getElementById('contribution-container');
+    const settingsToggleBtn = document.getElementById('settings-toggle');
+    const settingsView = document.getElementById('settings-view');
 
     // --- Initialization ---
     init();
@@ -41,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Event Listeners
         searchInput.addEventListener('input', handleSearch);
         viewToggleBtn.addEventListener('click', toggleView);
+        settingsToggleBtn.addEventListener('click', toggleSettings);
     }
 
     function updateStatusBanner() {
@@ -75,8 +79,38 @@ document.addEventListener('DOMContentLoaded', () => {
         listController.render(filteredData);
     }
 
+    function toggleSettings() {
+        const isSettingsOpen = !settingsView.classList.contains('hidden');
+
+        if (isSettingsOpen) {
+            // Close Settings -> Return to current view
+            settingsView.classList.add('hidden');
+
+            // Restore previous view state
+            if (isListView) {
+                listView.classList.remove('hidden');
+                iconList.classList.add('hidden');
+                iconMap.classList.remove('hidden');
+            } else {
+                mapView.classList.remove('hidden');
+                iconMap.classList.add('hidden');
+                iconList.classList.remove('hidden');
+                contributionContainer.classList.remove('hidden');
+            }
+        } else {
+            // Open Settings -> Hide everything else
+            settingsView.classList.remove('hidden');
+            mapView.classList.add('hidden');
+            listView.classList.add('hidden');
+            contributionContainer.classList.add('hidden');
+        }
+    }
+
     function toggleView() {
         isListView = !isListView;
+
+        // Ensure settings is closed when switching views
+        settingsView.classList.add('hidden');
 
         if (isListView) {
             mapView.classList.add('hidden');
