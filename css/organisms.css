@@ -91,3 +91,66 @@
     font-size: 16px;
     padding: 0;
 }
+
+/* --- Contribution Container --- */
+.contribution-container {
+    position: absolute;
+    top: 3.5rem;
+    /* Pushed down to avoid covering the status banner */
+    left: 0;
+    right: 0;
+    z-index: var(--z-overlay);
+    padding: 0 1rem;
+    pointer-events: none;
+    /* Allows clicking on the map around the card */
+    display: flex;
+    justify-content: center;
+}
+
+.contribution-card {
+    pointer-events: auto;
+    /* Re-enable clicks for the card itself */
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+}
+
+.contribution-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.contribution-text .title {
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--color-text-primary);
+}
+
+.contribution-text .subtitle {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    line-height: 1.2;
+}
+
+.btn-action {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+
+.btn-action:hover {
+    opacity: 0.8;
+}

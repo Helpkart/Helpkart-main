@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const iconMap = document.getElementById('icon-map');
     const mapView = document.getElementById('map');
     const listView = document.getElementById('list-view');
+    const contributionContainer = document.getElementById('contribution-container');
 
     // --- Initialization ---
     init();
@@ -82,12 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
             listView.classList.remove('hidden');
             iconList.classList.add('hidden');
             iconMap.classList.remove('hidden');
+            contributionContainer.classList.add('hidden');
         } else {
             listView.classList.add('hidden');
             mapView.classList.remove('hidden');
             iconMap.classList.add('hidden');
             iconList.classList.remove('hidden');
             mapController.invalidateSize();
+            contributionContainer.classList.remove('hidden');
         }
     }
 });
