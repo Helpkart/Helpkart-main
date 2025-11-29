@@ -187,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 iconMap.classList.add('hidden');
                 iconList.classList.remove('hidden');
                 contributionContainer.classList.remove('hidden');
+                mapController.invalidateSize();
             }
         } else {
             settingsView.classList.remove('hidden');
