@@ -11,7 +11,9 @@ export class MapController {
     }
 
     init() {
-        this.map = L.map(this.mapId).setView([7.9, 81.0], 6);
+        this.map = L.map(this.mapId, {
+            zoomControl: false
+        }).setView([7.9, 81.0], 6);
 
         // Define available layers
         this.layers = {

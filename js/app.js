@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateStatusBanner() {
         const now = new Date();
-        statusBanner.textContent = `Last Check: ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+        statusBanner.textContent = `Last Database Refresh: ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
     }
 
     // --- Interaction ---

@@ -1,15 +1,4 @@
 /* --- Layout Containers --- */
-.status-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: var(--z-overlay);
-    padding: 1rem;
-    pointer-events: none;
-    display: flex;
-    justify-content: center;
-}
 
 .status-banner {
     background-color: rgba(255, 255, 255, 0.9);
@@ -21,6 +10,8 @@
     color: var(--color-text-secondary);
     box-shadow: var(--shadow-sm);
     pointer-events: auto;
+    align-self: center;
+    margin-top: 0.5rem;
 }
 
 .bottom-bar {
@@ -95,7 +86,7 @@
 /* --- Contribution Container --- */
 .contribution-container {
     position: absolute;
-    top: 3.5rem;
+    top: 1rem;
     /* Pushed down to avoid covering the status banner */
     left: 0;
     right: 0;
@@ -105,6 +96,9 @@
     /* Allows clicking on the map around the card */
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .contribution-card {
