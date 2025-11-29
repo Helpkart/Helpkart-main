@@ -9,12 +9,18 @@ export class MapController {
     }
 
     init() {
-        // Default center (Kochi, Kerala roughly based on dummy data)
-        this.map = L.map(this.mapId).setView([10.0, 76.3], 11);
+        this.map = L.map(this.mapId).setView([7.9, 81.0], 6);
+
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(this.map);
+
+        // L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        //     subdomains: 'abcd',
+        //     maxZoom: 20
+        // }).addTo(this.map);
     }
 
     renderMarkers(data) {
