@@ -1,0 +1,101 @@
+/* --- Buttons --- */
+.btn {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    border: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+    height: 44px;
+    /* Minimum touch target */
+}
+
+.btn:active {
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background-color: var(--color-text-primary);
+    color: white;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.icon-btn {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    color: var(--color-text-primary);
+    transition: background-color 0.2s;
+}
+
+.icon-btn:active {
+    background-color: var(--color-bg);
+}
+
+/* --- Inputs --- */
+#search-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-md);
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+#search-input:focus {
+    box-shadow: 0 0 0 2px var(--color-normal);
+}
+
+/* --- Tags --- */
+.tag-stale {
+    background: #F3F4F6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #6B7280;
+}
+
+/* --- Text/Typography Atoms --- */
+.item-name {
+    color: var(--color-text-primary);
+}
+
+.item-amount {
+    font-weight: 600;
+}
+
+.list-critical .item-name,
+.list-critical .item-amount {
+    color: var(--color-critical);
+}
+
+.list-surplus .item-name,
+.list-surplus .item-amount {
+    color: var(--color-surplus);
+}
