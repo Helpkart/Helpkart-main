@@ -34,7 +34,7 @@ export function generatePopupContent(item) {
         .join('');
 
     const phoneBtn = item.Phone
-        ? `<a href="tel:${item.Phone}" class="btn btn-primary">Call</a>`
+        ? `<a href="tel:${item.Phone}" class="btn btn-secondary">Call</a>`
         : '';
 
     // 3. Return Cleaner HTML

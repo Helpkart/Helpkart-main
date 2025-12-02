@@ -1,5 +1,5 @@
 export const CONFIG = {
     DATA_URL: 'rations.json',
-    STALE_THRESHOLD_MS: 4 * 60 * 60 * 10000, // 4 hours - Changed for testing (extra 0)
+    STALE_THRESHOLD_MS: 24 * 60 * 60 * 1000, // 24 hours
     SYSTEM_COLS: ['id', 'lat', 'lng', 'status', 'updated_at']
 };
