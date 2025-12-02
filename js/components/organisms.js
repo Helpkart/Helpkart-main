@@ -8,6 +8,7 @@ export class MapController {
         this.markers = [];
         this.layers = {}; // Store layers here
         this.currentLayer = null;
+        this.heatLayer = null; // Store heatmap layer
     }
 
     init() {
@@ -34,6 +35,12 @@ export class MapController {
         const savedProvider = localStorage.getItem('mapProvider') || 'outdoor';
         this.currentLayer = this.layers[savedProvider] || this.layers.outdoor;
         this.currentLayer.addTo(this.map);
+
+        // Initialize Heatmap if saved
+        const isHeatmapEnabled = localStorage.getItem('heatmapEnabled') === 'true';
+        if (isHeatmapEnabled) {
+            this.toggleHeatmap(true);
+        }
     }
 
     setProvider(providerKey) {
@@ -44,6 +51,34 @@ export class MapController {
             // Save preference
             localStorage.setItem('mapProvider', providerKey);
         }
+    }
+
+    async toggleHeatmap(active) {
+        if (active) {
+            if (!this.heatLayer) {
+                try {
+                    const response = await fetch('heatmap.json');
+                    const heatData = await response.json();
+
+                    this.heatLayer = L.heatLayer(heatData, {
+                        radius: 20,
+                        blur: 15,
+                        maxZoom: 12,
+                        max: 1.0,
+                        gradient: { 0.4: 'blue', 0.65: 'lime', 1: 'red' }
+                    });
+                } catch (error) {
+                    console.error("Failed to load heatmap data:", error);
+                    return;
+                }
+            }
+            this.heatLayer.addTo(this.map);
+        } else {
+            if (this.heatLayer) {
+                this.map.removeLayer(this.heatLayer);
+            }
+        }
+        localStorage.setItem('heatmapEnabled', active);
     }
 
     renderMarkers(data) {
@@ -132,9 +167,27 @@ export class SettingsController {
             <div class="settings-container" style="max-width: 600px; margin: 0 auto; padding: 1.5rem;">
                 <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--color-text-primary);">Settings</h2>
                 
-                <!-- Map Provider Section -->
+                <!-- Map Layers Section -->
                 <div class="card" style="margin-bottom: 1.5rem; background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
-                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-text-primary);">Map Appearance</h3>
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-text-primary);">Map Layers</h3>
+                    
+                    <!-- Heatmap Toggle -->
+                    <label style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 12px; cursor: pointer; margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="background: #FF5722; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white;">
+                                🔥
+                            </div>
+                            <div>
+                                <div style="font-weight: 500; color: var(--color-text-primary);">Needs Heatmap</div>
+                                <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Visualize high-demand areas</div>
+                            </div>
+                        </div>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="heatmap-toggle" style="accent-color: #FF5722; width: 1.25rem; height: 1.25rem;">
+                        </div>
+                    </label>
+
+                    <h4 style="font-size: 0.875rem; font-weight: 600; margin: 1rem 0 0.5rem; color: var(--color-text-secondary);">Base Map</h4>
                     <div style="display: flex; flex-direction: column; gap: 0.75rem;">
                         <label style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 12px; cursor: pointer; transition: all 0.2s;">
                             <input type="radio" name="map-provider" value="outdoor" checked style="accent-color: black; width: 1.25rem; height: 1.25rem;">
@@ -199,6 +252,16 @@ export class SettingsController {
 
         // Load saved preference
         const savedProvider = localStorage.getItem('mapProvider') || 'outdoor';
+        const isHeatmapEnabled = localStorage.getItem('heatmapEnabled') === 'true';
+
+        // Heatmap Toggle Logic
+        const heatmapToggle = this.container.querySelector('#heatmap-toggle');
+        if (heatmapToggle) {
+            heatmapToggle.checked = isHeatmapEnabled;
+            heatmapToggle.addEventListener('change', (e) => {
+                this.mapController.toggleHeatmap(e.target.checked);
+            });
+        }
 
         // Add Event Listeners for Map Switching
         const radios = this.container.querySelectorAll('input[name="map-provider"]');
