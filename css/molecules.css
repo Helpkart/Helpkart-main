@@ -161,3 +161,20 @@
         gap: 0.25rem;
     }
 }
+
+/* --- New Fields --- */
+.popup-address {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+}
+
+.popup-notes {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #F3F4F6;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+}

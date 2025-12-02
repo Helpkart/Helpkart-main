@@ -2,7 +2,8 @@ import { CONFIG } from '../config.js';
 
 export function generatePopupContent(item) {
     // 1. Define columns to hide from the table (redundant or system cols)
-    const HIDDEN_COLS = [...CONFIG.SYSTEM_COLS, 'Location Name', 'Phone'];
+    // Added 'Address' and 'Notes' to hidden cols so they can be placed specifically
+    const HIDDEN_COLS = [...CONFIG.SYSTEM_COLS, 'Location Name', 'Phone', 'Address', 'Notes'];
 
     // 2. Generate Table Rows
     const tableRows = Object.keys(item)
@@ -42,6 +43,7 @@ export function generatePopupContent(item) {
         <div class="popup-content">
             <div class="popup-header">
                 <h3>${item['Location Name'] || 'Unknown Location'}</h3>
+                ${item.Address ? `<div class="popup-address">${item.Address}</div>` : ''}
                 <div class="popup-meta">
                     Updated: ${new Date(item.updated_at).toLocaleString([], { hour: '2-digit', minute: '2-digit' })}
                     ${item._isStale ? '<span class="tag-stale">STALE</span>' : ''}
@@ -52,6 +54,7 @@ export function generatePopupContent(item) {
                 <table class="data-table">
                     ${tableRows}
                 </table>
+                ${item.Notes ? `<div class="popup-notes"><strong>Notes:</strong> ${item.Notes}</div>` : ''}
             </div>
 
             <div class="actions">
