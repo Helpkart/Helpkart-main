@@ -17,6 +17,9 @@ export class MapController {
 
         // Define available layers
         this.layers = {
+            outdoor: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+            }),
             osm: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; OpenStreetMap contributors'
             }),
@@ -27,8 +30,9 @@ export class MapController {
             })
         };
 
-        // Set default layer
-        this.currentLayer = this.layers.osm;
+        // Load saved preference or use outdoor as default
+        const savedProvider = localStorage.getItem('mapProvider') || 'outdoor';
+        this.currentLayer = this.layers[savedProvider] || this.layers.outdoor;
         this.currentLayer.addTo(this.map);
     }
 
@@ -37,6 +41,8 @@ export class MapController {
             this.map.removeLayer(this.currentLayer);
             this.currentLayer = this.layers[providerKey];
             this.currentLayer.addTo(this.map);
+            // Save preference
+            localStorage.setItem('mapProvider', providerKey);
         }
     }
 
@@ -131,7 +137,14 @@ export class SettingsController {
                     <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-text-primary);">Map Appearance</h3>
                     <div style="display: flex; flex-direction: column; gap: 0.75rem;">
                         <label style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 12px; cursor: pointer; transition: all 0.2s;">
-                            <input type="radio" name="map-provider" value="osm" checked style="accent-color: black; width: 1.25rem; height: 1.25rem;">
+                            <input type="radio" name="map-provider" value="outdoor" checked style="accent-color: black; width: 1.25rem; height: 1.25rem;">
+                            <div>
+                                <div style="font-weight: 500; color: var(--color-text-primary);">Outdoor</div>
+                                <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Topographic outdoor view with terrain</div>
+                            </div>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 12px; cursor: pointer; transition: all 0.2s;">
+                            <input type="radio" name="map-provider" value="osm" style="accent-color: black; width: 1.25rem; height: 1.25rem;">
                             <div>
                                 <div style="font-weight: 500; color: var(--color-text-primary);">Standard</div>
                                 <div style="font-size: 0.875rem; color: var(--color-text-secondary);">OpenStreetMap detailed view</div>
@@ -181,11 +194,20 @@ export class SettingsController {
                 <div style="text-align: center; margin-top: 1rem; color: #9CA3AF; font-size: 0.75rem;">
                     Kudos to OpenStreetMap for the maps!
                 </div>
+            </div>
         `;
+
+        // Load saved preference
+        const savedProvider = localStorage.getItem('mapProvider') || 'outdoor';
 
         // Add Event Listeners for Map Switching
         const radios = this.container.querySelectorAll('input[name="map-provider"]');
         radios.forEach(radio => {
+            // Set checked state based on saved preference
+            if (radio.value === savedProvider) {
+                radio.checked = true;
+            }
+
             radio.addEventListener('change', (e) => {
                 this.mapController.setProvider(e.target.value);
 
