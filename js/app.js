@@ -1,4 +1,4 @@
-import { fetchData, parseTupleData } from './utils.js';
+import { fetchData, parseTupleData, fetchMetadata } from './utils.js';
 import { MapController, ListController, SettingsController } from './components/organisms.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -38,8 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
         mapController.init();
 
         try {
-            const rawData = await fetchData();
+            // Fetch both data and metadata in parallel
+            const [rawData, metadata] = await Promise.all([
+                fetchData(),
+                fetchMetadata().catch(() => ({ lastUpdated: null })) // Graceful fallback
+            ]);
+
             allData = parseTupleData(rawData);
+            updateStatusBanner(metadata.lastUpdated); // Pass timestamp
             mapController.renderMarkers(allData);
             listController.render(allData);
         } catch (error) {
@@ -63,9 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
         clearFiltersBtn.addEventListener('click', clearFilters);
     }
 
-    function updateStatusBanner() {
-        const now = new Date();
-        statusBanner.textContent = `Last Database Refresh: ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+    function updateStatusBanner(timestamp) {
+        if (timestamp) {
+            const updateTime = new Date(timestamp);
+            statusBanner.textContent = `Last Database Refresh: ${updateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+        } else {
+            // Fallback if metadata is unavailable
+            statusBanner.textContent = `Last Database Refresh: Unknown`;
+        }
     }
 
     function clearFilters() {

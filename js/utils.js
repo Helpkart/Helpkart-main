@@ -38,3 +38,9 @@ export function getMarkerColor(status) {
         default: return '#3B82F6'; // normal
     }
 }
+
+export async function fetchMetadata() {
+    const response = await fetch('metadata.json');
+    if (!response.ok) throw new Error('Failed to fetch metadata');
+    return await response.json();
+}

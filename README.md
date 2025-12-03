@@ -46,6 +46,17 @@ Main data file containing relief locations with the following schema:
 
 **Status types**: `normal`, `critical`, `surplus`
 
+### `metadata.json`
+Database metadata including last update timestamp:
+
+```json
+{
+  "lastUpdated": "2025-12-03T12:30:00+00:00"
+}
+```
+
+This timestamp is displayed in the status banner. Update this file whenever you refresh `rations.json`.
+
 ### `heatmap.json`
 Heatmap density data with coordinate and intensity values:
 
@@ -62,13 +73,15 @@ Heatmap density data with coordinate and intensity values:
 Helpkart/
 ├── index.html          # Main entry point
 ├── rations.json        # Relief locations data
+├── metadata.json       # Database metadata (last updated timestamp)
 ├── heatmap.json        # Heatmap density data
 ├── css/
 │   └── main.css        # Styles (Atomic Design)
 └── js/
     ├── app.js          # Main application logic
+    ├── utils.js        # Helper functions
+    ├── config.js       # Configuration constants
     └── components/
-        ├── atoms.js    # Basic UI components
         ├── molecules.js # Composite components
         └── organisms.js # Complex UI modules
 ```
