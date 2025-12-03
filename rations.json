@@ -16,368 +16,298 @@
     ],
     [
         "1",
-        6.9271,
-        79.8612,
-        "critical",
-        "2025-11-28T20:00:00+05:30",
-        "Colombo Central College",
-        "0112345678",
+        -77.8463,
+        166.6681,
+        "normal",
+        "2025-11-28T08:00:00+12:00",
+        "McMurdo Station (USA)",
+        "+1-720-555-0101",
         [
             {
-                "item": "Old Clothes",
-                "amount": "500 sets"
+                "item": "Frozen Burgers",
+                "amount": "2000 patties"
             },
             {
-                "item": "Books",
-                "amount": "200"
-            },
-            {
-                "item": "Toys",
-                "amount": "100"
-            }
-        ],
-        [
-            {
-                "item": "Rice",
-                "amount": "50kg"
-            },
-            {
-                "item": "Water",
-                "amount": "100L"
-            },
-            {
-                "item": "Baby Food",
-                "amount": "20 packs"
-            }
-        ],
-        "Mr. Perera",
-        "123 Maradana Rd, Colombo 10",
-        "8:00 AM - 10:00 PM",
-        "Entrance from the back gate only."
-    ],
-    [
-        "2",
-        6.0535,
-        80.2210,
-        "surplus",
-        "2025-11-28T14:00:00+05:30",
-        "Galle Fort Community Hall",
-        "0912345679",
-        [
-            {
-                "item": "Rice",
-                "amount": "500kg"
-            },
-            {
-                "item": "Water",
-                "amount": "1000L"
-            },
-            {
-                "item": "Coconuts",
-                "amount": "200"
-            }
-        ],
-        [
-            {
-                "item": "Fuel",
+                "item": "Lab Alcohol",
                 "amount": "50L"
             },
             {
-                "item": "Batteries",
-                "amount": "100 packs"
+                "item": "Parkas",
+                "amount": "150"
             }
         ],
-        "Mrs. Silva",
-        "45 Rampart St, Galle",
+        [
+            {
+                "item": "Fresh Lettuce",
+                "amount": "Critically Low"
+            },
+            {
+                "item": "Coffee Beans",
+                "amount": "50kg"
+            },
+            {
+                "item": "GPU Units",
+                "amount": "10 cards"
+            }
+        ],
+        "Stn. Mgr. Kowalski",
+        "Ross Island, Sector 1",
         "24 Hours",
-        "Heavy rain in the area, drive carefully."
+        "Main logistics hub. Ice runway active."
+    ],
+    [
+        "2",
+        -78.4645,
+        106.8340,
+        "critical",
+        "2025-11-28T14:00:00+06:00",
+        "Vostok Station (Russia)",
+        "+7-495-555-0199",
+        [
+            {
+                "item": "Ice Cores (Deep)",
+                "amount": "300m"
+            },
+            {
+                "item": "Vodka",
+                "amount": "40 cases"
+            },
+            {
+                "item": "Drill Bits",
+                "amount": "25"
+            }
+        ],
+        [
+            {
+                "item": "Heating Oil",
+                "amount": "Urgent"
+            },
+            {
+                "item": "Antifreeze",
+                "amount": "500L"
+            }
+        ],
+        "Dr. Ivanovich",
+        "Princess Elizabeth Land",
+        "Radio Contact Only",
+        "Temp -72C. Exterior operations suspended."
     ],
     [
         "3",
-        7.2906,
-        80.6337,
-        "normal",
-        "2025-11-28T19:30:00+05:30",
-        "Kandy Municipal Hall",
-        "0812345680",
+        -67.5677,
+        -68.1250,
+        "surplus",
+        "2025-11-28T09:30:00-03:00",
+        "Rothera Research Stn (UK)",
+        "+44-1223-555-234",
         [
             {
-                "item": "Tea",
-                "amount": "100kg"
+                "item": "Tea Bags",
+                "amount": "1000 boxes"
             },
             {
-                "item": "Vegetables",
+                "item": "Marine Samples",
+                "amount": "500 vials"
+            }
+        ],
+        [
+            {
+                "item": "Drone Propellers",
+                "amount": "20 sets"
+            },
+            {
+                "item": "Scones Mix",
+                "amount": "10kg"
+            },
+            {
+                "item": "Cadbury Choc",
+                "amount": "50 bars"
+            }
+        ],
+        "Cmdr. Thompson",
+        "Adelaide Island",
+        "08:00 AM - 18:00 PM",
+        "RRS Sir David Attenborough currently docked."
+    ],
+    [
+        "4",
+        -69.0041,
+        39.5855,
+        "normal",
+        "2025-11-28T15:45:00+03:00",
+        "Syowa Station (Japan)",
+        "+81-3-5550-7890",
+        [
+            {
+                "item": "Aurora Data",
+                "amount": "50TB"
+            },
+            {
+                "item": "Rice",
                 "amount": "200kg"
             }
         ],
         [
             {
-                "item": "Blankets",
-                "amount": "50"
-            },
-            {
-                "item": "Torches",
-                "amount": "20"
-            },
-            {
-                "item": "Raincoats",
-                "amount": "30"
-            }
-        ],
-        "Mr. Fernando",
-        "10 Dalada Veediya, Kandy",
-        "9:00 AM - 6:00 PM",
-        "Parking available for trucks."
-    ],
-    [
-        "4",
-        6.9497,
-        79.9217,
-        "critical",
-        "2025-11-28T19:45:00+05:30",
-        "Kolonnawa Relief Center",
-        "0112345681",
-        [
-            {
-                "item": "Plastic Chairs",
-                "amount": "50"
-            },
-            {
-                "item": "Tables",
-                "amount": "10"
-            }
-        ],
-        [
-            {
-                "item": "Rice",
+                "item": "Miso Paste",
                 "amount": "20kg"
             },
             {
-                "item": "Water",
-                "amount": "Urgent"
+                "item": "Camera Lenses",
+                "amount": "5 units"
             },
             {
-                "item": "Sanitary Pads",
-                "amount": "100 packs"
+                "item": "Soy Sauce",
+                "amount": "50L"
             }
         ],
-        "Ms. Jayasinghe",
-        "88 Kolonnawa Rd, Wellampitiya",
+        "Dr. Tanaka",
+        "East Ongul Island",
         "24 Hours",
-        "Urgent need for volunteers."
+        "Clear skies for aurora observation tonight."
     ],
     [
         "5",
-        6.7093,
-        79.9012,
-        "normal",
-        "2025-11-28T11:00:00+05:30",
-        "Moratuwa Town Hall",
-        "0112345682",
+        -70.6744,
+        -8.2742,
+        "surplus",
+        "2025-11-28T11:00:00+00:00",
+        "Neumayer-Station III (Germany)",
+        "+49-471-555-998",
         [
             {
-                "item": "Biscuits",
-                "amount": "200 packs"
+                "item": "Meteorites",
+                "amount": "15 specimens"
             },
             {
-                "item": "Timber",
-                "amount": "50 planks"
+                "item": "Hydroponic Salad",
+                "amount": "30kg"
             }
         ],
         [
             {
-                "item": "Water",
-                "amount": "50L"
+                "item": "Hydraulic Fluid",
+                "amount": "100L"
             },
             {
-                "item": "Nails",
-                "amount": "5kg"
+                "item": "Sausages",
+                "amount": "50 packs"
             }
         ],
-        "Mr. Cooray",
-        "55 Galle Rd, Moratuwa",
-        "8:00 AM - 8:00 PM",
-        "Dry rations preferred."
+        "Dr. Müller",
+        "Ekström Ice Shelf",
+        "08:00 AM - 20:00 PM",
+        "Station legs adjusting for snow accumulation."
     ],
     [
         "6",
-        7.9553,
-        81.0196,
-        "surplus",
-        "2025-11-28T19:55:00+05:30",
-        "Polonnaruwa Stadium",
-        "0272345683",
+        -75.0998,
+        123.3321,
+        "critical",
+        "2025-11-28T20:55:00+08:00",
+        "Concordia Station (France/Italy)",
+        "+33-1-555-0123",
         [
             {
-                "item": "Rice",
-                "amount": "600kg"
+                "item": "Astronomy Logs",
+                "amount": "Daily"
             },
             {
-                "item": "Dhal",
-                "amount": "150kg"
+                "item": "Wine (Red)",
+                "amount": "50 bottles"
             },
             {
-                "item": "Dried Fish",
+                "item": "Frozen Pasta",
                 "amount": "80kg"
             }
         ],
         [
             {
-                "item": "Mosquito Nets",
-                "amount": "100"
-            },
-            {
-                "item": "Coils",
-                "amount": "50 packs"
-            }
-        ],
-        "Mr. Bandara",
-        "New Town, Polonnaruwa",
-        "7:00 AM - 9:00 PM",
-        "Helicopter landing zone available."
-    ],
-    [
-        "7",
-        6.0329,
-        80.2168,
-        "critical",
-        "2025-11-28T20:05:00+05:30",
-        "Galle Bus Stand Relief",
-        "0912345684",
-        [
-            {
-                "item": "Newspapers",
-                "amount": "100 bundles"
-            },
-            {
-                "item": "Cardboard",
-                "amount": "50kg"
-            }
-        ],
-        [
-            {
-                "item": "Water",
-                "amount": "Urgent"
-            },
-            {
-                "item": "Bread",
-                "amount": "50 loaves"
-            },
-            {
-                "item": "Jam",
-                "amount": "20 bottles"
-            }
-        ],
-        "Mr. Dias",
-        "Main Bus Stand, Galle",
-        "24 Hours",
-        "Distribution happens every 2 hours."
-    ],
-    [
-        "8",
-        7.2930,
-        80.6350,
-        "normal",
-        "2025-11-28T18:00:00+05:30",
-        "Peradeniya University Hall",
-        "0812345685",
-        [
-            {
-                "item": "Rice",
-                "amount": "300kg"
-            },
-            {
-                "item": "Books",
-                "amount": "1000"
-            }
-        ],
-        [
-            {
-                "item": "Medicine Kits",
+                "item": "Oxygen Tanks",
                 "amount": "10"
             },
             {
-                "item": "Bandages",
-                "amount": "50 rolls"
+                "item": "Psych Meds",
+                "amount": "Small Kit"
             }
         ],
-        "Dr. Ratnayake",
-        "Galaha Rd, Peradeniya",
-        "10:00 AM - 4:00 PM",
-        "Medical camp in progress."
+        "Dr. Dubois / Dr. Rossi",
+        "Dome C Plateau",
+        "Isolation Mode",
+        "High altitude acclimation required for visitors."
     ],
     [
-        "9",
-        6.8211,
-        80.0409,
-        "surplus",
-        "2025-11-28T19:40:00+05:30",
-        "Ratnapura Community Center",
-        "0452345686",
+        "7",
+        -74.6946,
+        164.1133,
+        "normal",
+        "2025-11-28T09:05:00+13:00",
+        "Mario Zucchelli (Italy)",
+        "+39-06-555-4321",
         [
             {
-                "item": "Rice",
-                "amount": "500kg"
+                "item": "Espresso",
+                "amount": "Unlimited"
             },
             {
-                "item": "Water",
-                "amount": "1000L"
-            },
-            {
-                "item": "Gem Stones",
-                "amount": "Display only"
+                "item": "Seismic Data",
+                "amount": "Hard Drives"
             }
         ],
         [
             {
-                "item": "Boots",
-                "amount": "50 pairs"
+                "item": "Helicopter Fuel",
+                "amount": "5000L"
             },
             {
-                "item": "Gloves",
-                "amount": "100 pairs"
-            }
-        ],
-        "Mrs. Menike",
-        "22 Main St, Ratnapura",
-        "6:00 AM - 10:00 PM",
-        "Flood levels receding."
-    ],
-    [
-        "10",
-        9.6615,
-        80.0255,
-        "critical",
-        "2025-11-28T19:20:00+05:30",
-        "Jaffna Central Camp",
-        "0212345687",
-        [
-            {
-                "item": "Palmyra Roots",
-                "amount": "200kg"
-            },
-            {
-                "item": "Mats",
-                "amount": "50"
-            }
-        ],
-        [
-            {
-                "item": "Rice",
-                "amount": "50kg"
-            },
-            {
-                "item": "Kerosene",
+                "item": "Olive Oil",
                 "amount": "20L"
             },
             {
-                "item": "Tents",
-                "amount": "5"
+                "item": "Tomatoes (Canned)",
+                "amount": "100 tins"
             }
         ],
-        "Mr. Sivakumar",
-        "Hospital Rd, Jaffna",
-        "24 Hours",
-        "Language support needed (Tamil/Sinhala)."
+        "Capt. Ricci",
+        "Terra Nova Bay",
+        "Summer Season Only",
+        "Sea ice breaking up, ship approach possible."
+    ],
+    [
+        "8",
+        -79.4667,
+        -83.3167,
+        "surplus",
+        "2025-11-28T12:00:00-03:00",
+        "Canadian Field Camp (Canada)",
+        "+1-613-555-0188",
+        [
+            {
+                "item": "Maple Syrup",
+                "amount": "50 cans"
+            },
+            {
+                "item": "Snow Samples",
+                "amount": "200kg"
+            }
+        ],
+        [
+            {
+                "item": "Generator Parts",
+                "amount": "Urgent"
+            },
+            {
+                "item": "Bacon",
+                "amount": "20kg"
+            },
+            {
+                "item": "Wool Socks",
+                "amount": "30 pairs"
+            }
+        ],
+        "Ranger Tremblay",
+        "Ellsworth Mountains",
+        "Daylight Hours",
+        "Seasonal camp. Twin Otter landing strip marked."
     ]
 ]

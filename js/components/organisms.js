@@ -14,7 +14,7 @@ export class MapController {
     init() {
         this.map = L.map(this.mapId, {
             zoomControl: false
-        }).setView([7.9, 81.0], 6);
+        }).setView([-82.0, 0.0], 4);
 
         // Define available layers
         this.layers = {
@@ -60,12 +60,19 @@ export class MapController {
                     const response = await fetch('heatmap.json');
                     const heatData = await response.json();
 
+                    // Change heatmap sensitivity here
                     this.heatLayer = L.heatLayer(heatData, {
-                        radius: 20,
+                        radius: 25,
                         blur: 15,
-                        maxZoom: 12,
+                        maxZoom: 10,
                         max: 1.0,
-                        gradient: { 0.4: 'blue', 0.65: 'lime', 1: 'red' }
+                        gradient: {
+                            0.05: 'blue',
+                            0.1: 'cyan',
+                            0.15: 'lime',
+                            0.2: 'yellow',
+                            0.25: 'red'
+                        }
                     });
                 } catch (error) {
                     console.error("Failed to load heatmap data:", error);
@@ -172,18 +179,13 @@ export class SettingsController {
                     <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-text-primary);">Map Layers</h3>
                     
                     <!-- Heatmap Toggle -->
-                    <label style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 12px; cursor: pointer; margin-bottom: 1rem;">
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <div style="background: #FF5722; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white;">
-                                🔥
-                            </div>
-                            <div>
-                                <div style="font-weight: 500; color: var(--color-text-primary);">Needs Heatmap</div>
-                                <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Visualize high-demand areas</div>
-                            </div>
+                    <label style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 12px; cursor: pointer; margin-bottom: 1rem; transition: all 0.2s;">
+                        <div>
+                            <div style="font-weight: 500; color: var(--color-text-primary);">Needs Heatmap</div>
+                            <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Visualize high-demand areas</div>
                         </div>
                         <div class="toggle-switch">
-                            <input type="checkbox" id="heatmap-toggle" style="accent-color: #FF5722; width: 1.25rem; height: 1.25rem;">
+                            <input type="checkbox" id="heatmap-toggle" style="accent-color: #000; width: 1.25rem; height: 1.25rem;">
                         </div>
                     </label>
 
@@ -218,7 +220,7 @@ export class SettingsController {
                     <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-text-primary);">About Helpkart</h3>
                     
                     <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
-                        <strong>Helpkart</strong> is a community-driven flood relief coordination tool developed by <strong>Smile Labs</strong>. We aim to bridge the gap between those in need and those who can help by visualizing real-time data.
+                        <strong>Helpkart</strong> is a community-driven flood relief coordination tool developed by <strong>LazySeaHorse</strong>. We aim to bridge the gap between those in need and those who can help by visualizing real-time data.
                     </p>
                     
                     <div style="background: #F9FAFB; border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem; border-left: 4px solid #000;">
@@ -231,17 +233,17 @@ export class SettingsController {
                     <h4 style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text-primary);">Contact Us</h4>
                     <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem; color: var(--color-text-secondary);">
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span>📧</span> <a href="mailto:contact@smilelabs.org" style="color: inherit; text-decoration: underline;">contact@smilelabs.org</a>
+                            <span>📧</span> <a href="mailto:contact@lazyseahorse.io" style="color: inherit; text-decoration: underline;">contact@lazyseahorse.io</a>
                         </div>
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span>📞</span> <span>+94 77 123 4567</span>
+                            <span>📞</span> <span>+00 77 123 4567</span>
                         </div>
 
                     </div>
                 </div>
                 
                 <div style="text-align: center; margin-top: 2rem; color: #9CA3AF; font-size: 0.75rem;">
-                    v0.1 • Made with ❤️ in Sri Lanka
+                    v0.1 • Ice Boii
                 </div>
 
                 <div style="text-align: center; margin-top: 1rem; color: #9CA3AF; font-size: 0.75rem;">
