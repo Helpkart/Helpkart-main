@@ -12,6 +12,8 @@ Interactive map-based disaster relief coordination platform. Track supplies, vis
 - **List/Map Views**: Toggle between map and list views for better data navigation
 - **Mobile-First**: Optimized for mobile devices with bottom-positioned controls
 
+[![egvfrdr.jpg](https://i.postimg.cc/MZdW9WcC/egvfrdr.jpg)](https://postimg.cc/dDZP1cj6)
+
 ## Quick Start
 
 1. **Clone the repository**
