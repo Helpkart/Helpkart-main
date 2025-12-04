@@ -1,0 +1,42 @@
+name: 📊 Compile and Save Helpkart Data
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false  # don't use default GITHUB_TOKEN
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install pymongo
+
+      - name: Compile data
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        run: python scripts/compile_data.py
+
+      - name: Commit and push JSON
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add exports/
+          git commit -m "📊 Auto-compiled data" || exit 0
+
+          # Use PAT to push
+          git push https://x-access-token:${GH_PAT}@github.com/HimathX/helpkart-inventory-coordinator.git HEAD:main
