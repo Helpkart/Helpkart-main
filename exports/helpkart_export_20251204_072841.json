@@ -1,0 +1,130 @@
+{
+  "generated_at": "2025-12-04T07:28:41.541184",
+  "summary": {
+    "total_centers": 2,
+    "total_items": 5,
+    "open_requests": 2,
+    "transactions": 0
+  },
+  "data": {
+    "centers": [
+      {
+        "_id": "692e62e4ce5678d6a18ac0e7",
+        "center_id": "77321d42-5a6d-458b-8864-cd18c1fb868c",
+        "center_name": "Doe",
+        "email": "doe@gmail.com",
+        "phone": "0714435669",
+        "address": "A/Baker's Street/UK",
+        "location_coordinates": {
+          "lat": 0.0,
+          "lng": 0.0
+        },
+        "status": "active",
+        "created_at": "2025-12-02T09:24:12.013000",
+        "updated_at": "2025-12-02T09:24:12.013000"
+      },
+      {
+        "_id": "692e77b27c7d102c2523c99e",
+        "center_id": "6ff6fcbc-1e61-43c4-9150-0a532c61d6af",
+        "center_name": "Python Base",
+        "email": "python@gmail.com",
+        "phone": "0755959596",
+        "address": "87/12, RESERVOIR ROAD, MALIGAKANDA, COLOMBO 9",
+        "location_coordinates": {
+          "lat": 0.0,
+          "lng": 0.0
+        },
+        "status": "active",
+        "created_at": "2025-12-02T10:52:58.068000",
+        "updated_at": "2025-12-02T10:52:58.068000"
+      }
+    ],
+    "inventory": [
+      {
+        "_id": "692e6bac6c2b27c38d3315c7",
+        "item_id": "5593db62-b3e8-4263-8fa2-0dd2740d477c",
+        "center_id": "692e62e4ce5678d6a18ac0e7",
+        "item_name": "Rice Bags",
+        "category": "Food",
+        "quantity": 10,
+        "unit": "bags",
+        "description": "High-quality long-grain white rice bags for cafeteria or storage purposes.",
+        "created_at": "2025-12-02T10:01:40.104000",
+        "updated_at": "2025-12-02T10:45:19.032000"
+      },
+      {
+        "_id": "692e6d256c2b27c38d3315c8",
+        "item_id": "eca0f181-c724-406a-af19-3c7134a274ff",
+        "center_id": "692e62e4ce5678d6a18ac0e7",
+        "item_name": "Construction Safety Helmet",
+        "category": "Other",
+        "quantity": 18,
+        "unit": "pieces",
+        "description": "Durable safety helmets for on-site workers; adjustable strap included.",
+        "created_at": "2025-12-02T10:07:57.605000",
+        "updated_at": "2025-12-02T10:07:57.605000"
+      },
+      {
+        "_id": "692e720be51b988b9646cec2",
+        "item_id": "fc8f941f-9de2-4ee7-a67c-f33732ddbedb",
+        "center_id": "692e62e4ce5678d6a18ac0e7",
+        "item_name": "Milk Powder Pack",
+        "category": "Food",
+        "quantity": 1,
+        "unit": "kg",
+        "description": "High-quality milk powder for daily cafeteria use.",
+        "created_at": "2025-12-02T10:28:51.341000",
+        "updated_at": "2025-12-02T10:28:51.341000"
+      },
+      {
+        "_id": "692e78357c7d102c2523c99f",
+        "item_id": "41309861-0da8-4f7d-b900-dca482cc7bea",
+        "center_id": "692e77b27c7d102c2523c99e",
+        "item_name": "White Rice (5kg Bag)",
+        "category": "Food",
+        "quantity": 50,
+        "unit": "kg",
+        "description": "Basic carbohydrate-rich food for emergency distribution.",
+        "created_at": "2025-12-02T10:55:09.546000",
+        "updated_at": "2025-12-02T10:55:09.546000"
+      },
+      {
+        "_id": "692e78507c7d102c2523c9a0",
+        "item_id": "32647ba5-9c22-467d-ae90-2ac6b20e194f",
+        "center_id": "692e77b27c7d102c2523c99e",
+        "item_name": "Biscuit Pack",
+        "category": "Food",
+        "quantity": 100,
+        "unit": "packets",
+        "description": "Durable, fast-calorie food source for crisis situations.",
+        "created_at": "2025-12-02T10:55:36.673000",
+        "updated_at": "2025-12-02T10:55:36.674000"
+      }
+    ],
+    "requests": [
+      {
+        "_id": "692e6f4f6c2b27c38d3315c9",
+        "request_id": "fdef0712-369e-4124-998a-be0d496cc6a7",
+        "center_id": "692e62e4ce5678d6a18ac0e7",
+        "item_name": "Bandage Rolls ",
+        "quantity": 10,
+        "reason": "The clinic first-aid box needs restocking due to recent usage during minor injuries.",
+        "status": "Pending",
+        "created_at": "2025-12-02T10:17:11.231000",
+        "updated_at": "2025-12-02T10:17:11.231000"
+      },
+      {
+        "_id": "692e6f6c6c2b27c38d3315ca",
+        "request_id": "f371581a-071d-4370-ae07-868e510ec953",
+        "center_id": "692e62e4ce5678d6a18ac0e7",
+        "item_name": "Extension Cord \u2013 4 Socket",
+        "quantity": 4,
+        "reason": "Needed to support additional devices in the project workspace due to limited wall outlets.",
+        "status": "Pending",
+        "created_at": "2025-12-02T10:17:40.513000",
+        "updated_at": "2025-12-02T10:17:40.513000"
+      }
+    ],
+    "transactions": []
+  }
+}
