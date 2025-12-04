@@ -13,7 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          persist-credentials: false  # don't use default GITHUB_TOKEN
+          persist-credentials: false
+          fetch-depth: 0  # Get full history for rebase
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -34,9 +35,16 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
+          
+          # Set remote URL with PAT
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/HimathX/helpkart-inventory-coordinator.git
+          
+          # Fetch latest and rebase before committing
+          git fetch origin main
+          git rebase origin/main
+          
           git add exports/
           git commit -m "📊 Auto-compiled data" || exit 0
-
-          # Use PAT to push
-          git push https://x-access-token:${GH_PAT}@github.com/HimathX/helpkart-inventory-coordinator.git HEAD:main
+          
+          # Push with updated main
+          git push origin HEAD:main
