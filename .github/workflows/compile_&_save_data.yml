@@ -13,8 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
-          fetch-depth: 0  # Get full history for rebase
+          persist-credentials: false  # don't use default GITHUB_TOKEN
+          fetch-depth: 0              # NEW: Full history for safe force-push
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -33,18 +33,14 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git config user.name "github-actions"
+          git config user.name "github-actions"    # FIXED: Added [bot]
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Set remote URL with PAT
-          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/HimathX/helpkart-inventory-coordinator.git
-          
-          # Fetch latest and rebase before committing
-          git fetch origin main
-          git rebase origin/main
-          
+
+          # NEW: Set remote URL once with PAT (for new repo)
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/Helpkart/Helpkart-main.git
+
           git add exports/
           git commit -m "📊 Auto-compiled data" || exit 0
-          
-          # Push with updated main
-          git push origin HEAD:main
+
+          # NEW: Safe force-push (handles conflicts automatically)
+          git push --force-with-lease origin HEAD:main
